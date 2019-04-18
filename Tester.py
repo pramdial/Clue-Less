@@ -14,6 +14,9 @@ from CaseFile import *
 from Player import *
 from Deck import *
 from Card import *
+from Weapon import *
+from Room import *
+from Hallway import *
 
 #==============================================================================
 # - Configurations
@@ -48,7 +51,7 @@ def main():
 	clue_deck = Deck()
 
 	# -------------------------------------------------------------------------
-	# Create an ordered Deck of Cards
+	# Test Creating an ordered Deck of Cards
 	for name in Master_List:
 		if name in Rooms:
 			card_type = "Room"
@@ -69,7 +72,7 @@ def main():
 		print(card)
 
 	#--------------------------------------------------------------------------- 
-	# Shuffle the Cards
+	# Test shuffling the Cards
 
 	clue_deck.shuffle_cards()
 	print("\nShuffled Deck")
@@ -77,7 +80,7 @@ def main():
 		print(card)
 
 	#--------------------------------------------------------------------------- 
-	# Distribute the Cards
+	# Test Distributing the Cards
 
 	print("\n-- Distributing Cards--")
 
@@ -144,6 +147,27 @@ def main():
 	correct_guess = Homer.make_accusation("Mrs. White", "Library", "Lead Pipe", case_file)
 	print(correct_guess)
 
+	#---------------------------------------------------------------------------
+	# Test Weapon Creation and Function
+
+	waepon_object = Weapon("Rope")
+	waepon_object.displayWeapon()
+
+	#---------------------------------------------------------------------------
+	# Test Room
+
+	room1 = Room("Lounge",True,Homer,waepon_object,True)
+	print("Room 1: {}".format(room1.weapon.weaponName))
+
+	room2 = Room("Conservatory",True,Homer,waepon_object,True)
+	print("Room 2: {}".format(room2.weapon.weaponName))
+
+	#---------------------------------------------------------------------------
+	# Test Hallway
+
+	hallway = Hallway(6,False,None,room1,room2)
+	print("Hallway connects rooms: {} and {}".format(hallway.room1.roomName,
+														hallway.room2.roomName))
 
 if __name__ == "__main__":
     main()

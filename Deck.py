@@ -47,7 +47,7 @@ class Deck(object):
                 matching_type = False
                 for held_card in card_holder:
                     if card.card_type == held_card.card_type:
-                        print("Card Type in holder")
+                        # print("Card Type in holder")
                         matching_type = True
                         break
                     else:
@@ -70,5 +70,5 @@ class Deck(object):
         else:
             print("Error")
 
-        print(card_holder)
+        # print(card_holder)
         return(card_holder)

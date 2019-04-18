@@ -4,7 +4,7 @@
 # - Documentation
 #===============================================================================
 # P. Lin 04/17/2019
-# P. Ramdial - Modified to take Card Objects
+# P. Ramdial - Modified to take Card Objects 04/18/2019
 
 # NOTE:
 #   1. show_case_file() returns a list of strings
